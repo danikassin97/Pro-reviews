@@ -1,0 +1,29 @@
+<!-- <h1><%= title %></h1> -->
+<h1 style="padding-top: 50px;">Welcome to <%= title %></h1>
+
+<% if (typeof currentUser === 'object') { %>
+  <!-- If we got the logged in user variable -->
+  <h3> Hello, <%= currentUser.username %>. </h3>
+<% } else { %>
+  <!-- If we DIDN'T GET  the logged in user variable -->
+  <a href="https://www.opentable.com/miami-restaurants">Reserve now</a>
+<% } %>
+
+<h2>Other People Have Posted These Reviews!</h2>
+
+
+<ul>
+  <p><% reviewsAndStuff.forEach((oneReview) => { %></p>
+    <div class="container" style="float: left; width: 75%;">
+    <li style="background-color: lightgray; height: 350px;">
+      <h3 class="move"><%= oneReview.restaurantName %></h3>
+      <img src="<%= oneReview.photoUrl %>" >
+      <!-- <p>Restaurant Name: <i><%= oneReview.restaurantName %></i></p> -->
+      <p class="move">Cuisine: <i><%= oneReview.cuisine %></i></p>
+      <p class="move">Rating: <i><%= oneReview.rating %></i></p>
+      <p class="move">Comments: <i><%= oneReview.comments %></i></p>
+
+    </li>
+  </div>
+  <% }) %>
+</ul>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <title><%= title %></title> -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-fixed-top navbar-inverse">
+   <div class="container">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="/">Pro Reviews</a>
+     </div>
+     <div id="navbar" class="collapse navbar-collapse">
+       <ul class="nav navbar-nav">
+         <li><a href="/"> Home </a></li>
+       </ul>
+          <ul class="nav navbar-nav navbar-right" >
+         <% if (typeof currentUser === 'object') { %>
+             <!-- If we got the logged in user variable -->
+             <li><a href="/reviews/my-reviews"> Your Reviews </a></li>
+             <!-- <br> -->
+             <li><a href="/reviews/new"> Add a Restaurant Review </a></li>
+             <!-- <br> -->
+             <li><a href="/logout"> Log Out </a></li>
+             <!-- <br> -->
+         <% } else { %>
+             <li><a href="/signup"> Sign Up </a></li>
+             <!-- <br> -->
+             <li><a href="/login" class="navbar-right"> Log In </a></li>
+             <!-- <br> -->
+         <% } %>
+       </ul>
+     </div><!-- /.nav-collapse -->
+   </div><!-- /.container -->
+ </nav><!-- /.navbar -->
+ <div>
+   <!-- <img class="band" src="/images/background.png"> -->
+ </div>
+ <div class="col-xs-6 col-sm-3 sidebar-offcanvas" style="float: right; width: 25%; padding-top: 80px; margin-left: 1050px; position: fixed;" id="sidebar">
+          <div class="list-group">
+            <a href="/" class="list-group-item active">Types of Cuisines</a>
+            <a href="/reviews/mexican" class="list-group-item">Mexican</a>
+            <a href="/reviews/indonesian" class="list-group-item">Indonesian</a>
+            <a href="/reviews/chinese" class="list-group-item">Chinese</a>
+            <a href="/reviews/italian" class="list-group-item">Italian</a>
+            <a href="/reviews/spanish" class="list-group-item">Spanish</a>
+            <a href="/reviews/french" class="list-group-item">French</a>
+            <a href="/reviews/japanese" class="list-group-item">Japanese</a>
+            <a href="/reviews/turkish" class="list-group-item">Turkish</a>
+            <a href="/reviews/indian" class="list-group-item">Indian</a>
+            <a href="/reviews/thai" class="list-group-item">Thai</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+    <div class="container">
+    <%- body %>
+    </div>
+    <footer>
+      <div>
+        <!-- <img class="band" src="/images/background.png"> -->
+      </div>
+    </footer>
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

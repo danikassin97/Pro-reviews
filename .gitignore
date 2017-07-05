@@ -31,4 +31,3 @@ npm-debug.log
 
 # File that contains environment variables for development
 # (this file has all the secret credentials that we don't want to commit)
-.env

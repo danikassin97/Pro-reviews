@@ -1,7 +1,8 @@
 <h2 style="margin-top: 70px;">Log In</h2>
 
-
-<form  id="form" method="post" action="/login">
+<br>
+<br>
+<!-- <form  id="form" method="post" action="/login">
 <label for="username-input">Username</label>
 <input id="username-input" type="text" name="loginUsername">
 <br>
@@ -17,4 +18,36 @@
 <a href="/auth/facebook">Sign In With Facebook</a>
 
 <a href="/auth/google">Sign In With Google</a>
+</form> -->
+
+<!--                         -->
+
+<form id="form" method="post" action="/login" >
+<ul class="form-style-1" style="width: 400px;">
+
+    <label for="username-input"> Username <span class="required">*</span></label>
+    <input id="username-input" type="text" name="loginUsername" placeholder="john1000">
+  </li>
+    <br>
+
+    <label for="password-input">Password <span class="required">*</span></label>
+    <input id="password-input" type="password" name="loginPassword" placeholder="**********">
+    <br>
+
+    <!-- <li>
+        <label>Subject</label>
+        <select name="field4" class="field-select">
+        <option value="Advertise">Advertise</option>
+        <option value="Partnership">Partnership</option>
+        <option value="General Question">General</option>
+        </select>
+    </li> -->
+    <!-- <li>
+        <label>Your Message <span class="required">*</span></label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li> -->
+    <li>
+      <button>Log In</button>
+    </li>
+</ul>
 </form>

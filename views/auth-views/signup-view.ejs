@@ -1,6 +1,5 @@
-<h2 style="margin-top: 70px;">Sign Up</h2>
+<!-- <h2 style="margin-top: 70px;">Sign Up</h2>
 
-<!-- we use typeof here to avoid an error since the variable sometimes does not exist -->
 <% if (typeof messageForDumbUsers ==="string"){ %>
   <p class="error-message"> <%= messageForDumbUsers %> </p>
 <% } %>
@@ -27,4 +26,64 @@
   <a href="/auth/facebook">Sign In With Facebook</a>
   <a href="/auth/google">Sign In With Google</a>
 
+</form> -->
+<h2 style="margin-top: 70px;">Sign Up</h2>
+<br>
+<br>
+
+<form id="form" method="post" action="/signup" >
+<ul class="form-style-1" style="width: 400px;">
+    <li>
+      <label for="full-name-input">Full Name <span class="required">*</span></label>
+      <input id="full-name-input" type="text" name="signupFullName" class="field-divided" placeholder="First and Last">
+    </li>
+    <li>
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="field3" class="field-long" placeholder="example@example.com" />
+    </li>
+
+    <li>
+
+    <label for="username-input"> Username <span class="required">*</span></label>
+    <input id="username-input" type="text" name="signupUsername" placeholder="john1000">
+  </li>
+    <br>
+
+    <label for="password-input">Password <span class="required">*</span></label>
+    <input id="password-input" type="password" name="signupPassword" placeholder="**********">
+    <br>
+
+    <label for="address-input">Address <span class="required">*</span></label>
+    <input id="address-input" type="text" name="signupAddress" >
+    <br>
+
+    <label for="city-input">City <span class="required">*</span></label>
+    <input id="city-input" type="text" name="signupCity">
+    <br>
+
+    <label for="state-input">State <span class="required">*</span></label>
+    <input id="state-input" type="text" name="signupState">
+    <br>
+
+    <label for="postal-input">Postal code <span class="required">*</span></label>
+    <input id="postal-input" type="text" name="signupPostal">
+    <br>
+
+
+    <!-- <li>
+        <label>Subject</label>
+        <select name="field4" class="field-select">
+        <option value="Advertise">Advertise</option>
+        <option value="Partnership">Partnership</option>
+        <option value="General Question">General</option>
+        </select>
+    </li> -->
+    <!-- <li>
+        <label>Your Message <span class="required">*</span></label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li> -->
+    <li>
+      <button>Sign Up</button>
+    </li>
+</ul>
 </form>

@@ -64,176 +64,190 @@ router.get("/reviews/my-reviews", (req, res, next) => {
     }
   );
 });
+//
+//
+// router.get("/reviews/italian", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-italian.ejs");
+//   });
+// });
+//
+// router.get("/reviews/mexican", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-mexican.ejs");
+//   });
+// });
+//
+// router.get("/reviews/indonesian", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-indonesian.ejs");
+//   });
+// });
+//
+// router.get("/reviews/chinese", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-chinese.ejs");
+//   });
+// });
+//
+// router.get("/reviews/spanish", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-spanish.ejs");
+//   });
+// });
+//
+// router.get("/reviews/french", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-french.ejs");
+//   });
+// });
+//
+// router.get("/reviews/japanese", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-japanese.ejs");
+//   });
+// });
+//
+// router.get("/reviews/turkish", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-turkish.ejs");
+//   });
+// });
+//
+// router.get("/reviews/indian", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-indian.ejs");
+//   });
+// });
+//
+// router.get("/reviews/thai", (req, res, next) => {
+//
+//   reviewModel.find(
+//     {},
+//     (err, reviewResults) => {
+//       if (err) {
+//         next(err);
+//         return;
+//       }
+//       // console.log(reviewResults);
+//       res.locals.reviewsAndStuff = reviewResults;
+//       console.log(reviewResults);
+//
+//       res.render("cuisines/review-list-thai.ejs");
+//   });
+// });
 
+router.get("/reviews/:myId/delete", (req, res, next) => {
+  reviewModel.findByIdAndRemove(
+    req.params.myId,
 
-router.get("/reviews/italian", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
+    (err, reviewFromDb) => {
       if (err) {
         next(err);
         return;
       }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-italian.ejs");
-  });
-});
-
-router.get("/reviews/mexican", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-mexican.ejs");
-  });
-});
-
-router.get("/reviews/indonesian", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-indonesian.ejs");
-  });
-});
-
-router.get("/reviews/chinese", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-chinese.ejs");
-  });
-});
-
-router.get("/reviews/spanish", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-spanish.ejs");
-  });
-});
-
-router.get("/reviews/french", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-french.ejs");
-  });
-});
-
-router.get("/reviews/japanese", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-japanese.ejs");
-  });
-});
-
-router.get("/reviews/turkish", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-turkish.ejs");
-  });
-});
-
-router.get("/reviews/indian", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-indian.ejs");
-  });
-});
-
-router.get("/reviews/thai", (req, res, next) => {
-
-  reviewModel.find(
-    {},
-    (err, reviewResults) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      // console.log(reviewResults);
-      res.locals.reviewsAndStuff = reviewResults;
-      console.log(reviewResults);
-
-      res.render("cuisines/review-list-thai.ejs");
-  });
+      res.redirect("/reviews/my-reviews");
+    }
+  );
 });
 
 module.exports = router;

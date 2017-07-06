@@ -1,10 +1,13 @@
+<h1>All Thai Restaurants</h1>
+
+
 <ul>
 
 
   <p><% reviewsAndStuff.forEach((oneReview) => { %></p>
     <% if(oneReview.cuisine === "Thai"){ %>
     <div class="container" style="float: left; width: 75%;">
-    <li style="background-color: lightgray; height: 350px;">
+    <li class="box">
       <h3 class="move"><%= oneReview.restaurantName %></h3>
       <img src="<%= oneReview.photoUrl %>" >
       <!-- <p>Restaurant Name: <i><%= oneReview.restaurantName %></i></p> -->

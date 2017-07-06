@@ -1,0 +1,24 @@
+<h2 style="margin-top: 70px;"> My Reviews </h2>
+
+<ul>
+  <p><% restaurantsAndStuff.forEach((oneResto) => { %></p>
+    <div class="container" style="float: left; width: 75%;">
+    <li class="box">
+      <h3 class="move"><%= oneResto.name %></h3>
+      <img src="<%= oneResto.image_url %>" >
+      <!-- <p>Restaurant Name: <i><%= oneResto.restaurantName %></i></p> -->
+      <p class="move">Cuisine: <i><%= oneResto.address %></i></p>
+      <p class="move">Rating: <i><%= oneResto.city %></i></p>
+      <p class="move">Comments: <i><%= oneResto.state %></i></p>
+      <p class="move">Comments: <i><%= oneResto.country %></i></p>
+      <p class="move">Comments: <i><%= oneResto.phone %></i></p>
+      <p class="move">Comments: <i><%= oneResto.price %></i></p>
+      <p class="move">Comments: <i><%= oneResto.reserve_url %></i></p>
+
+      <a href="<%= oneResto._id %>/delete" style="position: relative">
+        Delete This Review
+      </a>
+    </li>
+  </div>
+  <% }) %>
+</ul>

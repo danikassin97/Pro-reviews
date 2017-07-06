@@ -1,29 +1,147 @@
 <!-- <h1><%= title %></h1> -->
-<h1 style="padding-top: 50px;">Welcome to <%= title %></h1>
+<!-- <h1 style="padding-top: 50px;" class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1> -->
+
+<!-- <% if (typeof currentUser === 'object') { %> -->
+  <!-- If we got the logged in user variable -->
+  <!-- <h3> Hello, <%= currentUser.username %>. </h3>
+  <h2>Here Are Some Restaurants Near You!</h2>
+<% } else { %>
+
+  <h2>Here Are Some Restaurants For You!</h2>
+
+<% } %> -->
+
+<link rel="stylesheet" href="/stylesheets/carousel.css">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img class="first-slide" src="/images/food1.png" alt="First slide">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img class="second-slide" src="/images/food2.png" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 style="padding-top: 50px;" class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img class="third-slide" src="/images/food3.png" alt="Third slide">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
 <% if (typeof currentUser === 'object') { %>
-  <!-- If we got the logged in user variable -->
+
+  <% if ( currentUser.city === "Miami"){ %>
+
+<div style="margin-bottom: 60px; margin-left: 150px;">
   <h3> Hello, <%= currentUser.username %>. </h3>
-<% } else { %>
-  <!-- If we DIDN'T GET  the logged in user variable -->
-  <a href="https://www.opentable.com/miami-restaurants">Reserve now</a>
-<% } %>
+  <h2>Here Are Some Restaurants Near You!</h2>
+</div>
 
-<h2>Other People Have Posted These Reviews!</h2>
+<div class="container marketing">
+
+     <!-- Three columns of text below the carousel -->
+     <div class="row">
+       <% restaurants.forEach((result) => { %>
+         <% if (result.city === "Miami") { %>
+           <div class="col-lg-4">
+             <img class="img-circle" src="${result.image_url}" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2><%= result.name %></h2>
+             <p><%= result.address %></p>
+             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div><!-- /.col-lg-4 -->
+         <% } %>
+       <% }); %>
+     </div><!-- /.row -->
+</div>
+
+<% } else if (typeof currentUser.city === "New York"){ %>
+
+  <h3> Hello, <%= currentUser.username %>. </h3>
+  <h2>Here Are Some Restaurants Near You!</h2>
+
+    <div class="container marketing">
+
+         <!-- Three columns of text below the carousel -->
+         <div class="row">
+           <div class="col-lg-4">
+             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2>Heading</h2>
+             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div><!-- /.col-lg-4 -->
+           <div class="col-lg-4">
+             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2>Heading</h2>
+             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div><!-- /.col-lg-4 -->
+           <div class="col-lg-4">
+             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2>Heading</h2>
+             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div><!-- /.col-lg-4 -->
+         </div><!-- /.row -->
+    </div>
+
+    <% } %>
+
+    <% } else { %>
+
+      <h2>Here Are Some Restaurants For You!</h2>
+
+      <div class="container marketing">
+
+           <!-- Three columns of text below the carousel -->
+           <div class="row">
+             <div class="col-lg-4">
+               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+               <h2>Heading</h2>
+               <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+             </div><!-- /.col-lg-4 -->
+             <div class="col-lg-4">
+               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+               <h2>Heading</h2>
+               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+             </div><!-- /.col-lg-4 -->
+             <div class="col-lg-4">
+               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+               <h2>Heading</h2>
+               <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+             </div><!-- /.col-lg-4 -->
+           </div><!-- /.row -->
+      </div>
+
+    <% } %>
 
 
-<ul>
-  <p><% reviewsAndStuff.forEach((oneReview) => { %></p>
-    <div class="container" style="float: left; width: 75%;">
-    <li style="background-color: lightgray; height: 350px;">
-      <h3 class="move"><%= oneReview.restaurantName %></h3>
-      <img src="<%= oneReview.photoUrl %>" >
-      <!-- <p>Restaurant Name: <i><%= oneReview.restaurantName %></i></p> -->
-      <p class="move">Cuisine: <i><%= oneReview.cuisine %></i></p>
-      <p class="move">Rating: <i><%= oneReview.rating %></i></p>
-      <p class="move">Comments: <i><%= oneReview.comments %></i></p>
 
-    </li>
-  </div>
-  <% }) %>
-</ul>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>

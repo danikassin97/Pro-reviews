@@ -3,7 +3,7 @@
 <ul>
   <p><% reviewsAndStuff.forEach((oneReview) => { %></p>
     <div class="container" style="float: left; width: 75%;">
-    <li style="background-color: lightgray; height: 350px;">
+    <li class="box">
       <h3 class="move"><%= oneReview.restaurantName %></h3>
       <img src="<%= oneReview.photoUrl %>" >
       <!-- <p>Restaurant Name: <i><%= oneReview.restaurantName %></i></p> -->
@@ -11,6 +11,9 @@
       <p class="move">Rating: <i><%= oneReview.rating %></i></p>
       <p class="move">Comments: <i><%= oneReview.comments %></i></p>
 
+      <a href="<%= oneReview._id %>/delete" style="position: relative">
+        Delete This Review
+      </a>
     </li>
   </div>
   <% }) %>

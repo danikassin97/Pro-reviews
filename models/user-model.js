@@ -6,9 +6,14 @@ const myUserSchema = new Schema(
   {                                   //first argument -> structure object
     fullName: {type: String},
     username: {type: String},
+    address: {type: String},
+    city: {type: String},
+    state: {type: String},
+    postal_code: {type: String},
+
 
     // SIGN UP/LOG IN FORM users ---------
-    encryptedPassword: {type: String},
+    encryptedPassword: {type: String },
 
     // GOOGLE users ----------------------
     googleId: { type: String },

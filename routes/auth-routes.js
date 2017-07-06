@@ -51,8 +51,14 @@ router.post("/signup", (req, res, next) => {
       const theUser = new UserModel({
         fullName: req.body.signupFullName,
         username: req.body.signupUsername,
+        address: req.body.signupAddress,
+        city: req.body.signupCity,
+        state: req.body.signupState,
+        postal_code: req.body.signupPostal,
+
         encryptedPassword: scrambledPassword
       });
+      console.log("working --------------------------")
 
       theUser.save((err) => {
         if (err) {

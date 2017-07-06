@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
   <head>
     <meta charset="utf-8">
     <!-- <title><%= title %></title> -->
@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
-  <body>
+  <body style="background-color: white; height:100%;">
+    <div class="container">
     <header>
       <nav class="navbar navbar-fixed-top navbar-inverse">
    <div class="container">
@@ -44,10 +45,11 @@
      </div><!-- /.nav-collapse -->
    </div><!-- /.container -->
  </nav><!-- /.navbar -->
+ </header>
  <div>
-   <!-- <img class="band" src="/images/background.png"> -->
+   <!-- <img class="top-pic" src="/images/eating.png"> -->
  </div>
- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" style="float: right; width: 25%; padding-top: 80px; margin-left: 1050px; position: fixed;" id="sidebar">
+ <!-- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" style="float: right; width: 25%; padding-top: 274px; margin-left: 1050px; position: fixed;" id="sidebar">
           <div class="list-group">
             <a href="/" class="list-group-item active">Types of Cuisines</a>
             <a href="/reviews/mexican" class="list-group-item">Mexican</a>
@@ -61,10 +63,10 @@
             <a href="/reviews/indian" class="list-group-item">Indian</a>
             <a href="/reviews/thai" class="list-group-item">Thai</a>
           </div>
-        </div><!--/.sidebar-offcanvas-->
-    <div class="container">
+        </div></.sidebar-offcanvas-->
+    <!-- <div class="container"> -->
     <%- body %>
-    </div>
+    <!-- </div> -->
     <footer>
       <div>
         <!-- <img class="band" src="/images/background.png"> -->
@@ -72,5 +74,6 @@
     </footer>
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
   </body>
 </html>

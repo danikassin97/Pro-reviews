@@ -65,7 +65,7 @@
        <% restaurants.forEach((result) => { %>
          <% if (result.city === "Miami") { %>
            <div class="col-lg-4">
-             <img class="img-circle" src="${result.image_url}" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <img class="img-circle" src="<%= result.image_url %>" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
              <h2><%= result.name %></h2>
              <p><%= result.address %></p>
              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>

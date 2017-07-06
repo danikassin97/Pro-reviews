@@ -37,7 +37,7 @@ const restaurantInfoArray = [
     phone: 7868995038,
     price: 3,
     reserve_url: "https://www.opentable.com/r/pubbelly-sushi-brickell-miami",
-    image_url: "/images/zuma.png"
+    image_url: "/images/pubbelly.png"
   },
   {
     name: "Daniel",

@@ -22,7 +22,7 @@ router.get("/", (req, res, next) => {
       }
 
 
-      console.log(res.locals.restaurants);
+      // console.log(res.locals.restaurants);
 
       if (req.user) {
         UserModel.findById(
@@ -36,7 +36,9 @@ router.get("/", (req, res, next) => {
                  console.log(`RESULTS ${restaurantResults}`);
               res.render("index.ejs", {restaurants: restaurantResults});
             }
-          );      } else {
+          );
+        } else {
+            res.locals.restaurants = restaurantResults;
         res.render("index");
       }
       });
@@ -55,8 +57,6 @@ router.get("/", (req, res, next) => {
       //     res.render("review-views/review-list-view.ejs");
       //   }
       // );
-
-      res.render("index");
     }
   );
 

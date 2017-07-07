@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/project-2");
+mongoose.connect(process.env.MONGODB_URI);
 
 
 const Restaurant = require("../models/restaurants-model.js");

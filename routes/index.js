@@ -33,7 +33,7 @@ router.get("/", (req, res, next) => {
                 return;
               }
               res.locals.currentUser = userFromDb;
-                 console.log(`RESULTS ${restaurantResults}`);
+                //  console.log(`RESULTS ${restaurantResults}`);
               res.render("index.ejs", {restaurants: restaurantResults});
             }
           );

@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'Pro Reviews';
+app.locals.title = 'RestoFinder';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -75,6 +75,9 @@ app.use("/", myAutoRoutes);
 
 const myReviewRoutes = require("./routes/review-routes.js");
 app.use("/", myReviewRoutes);
+
+const myRestaurantRoutes = require("./routes/restaurant-routes.js");
+app.use("/", myRestaurantRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

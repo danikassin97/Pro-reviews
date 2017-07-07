@@ -1,24 +1,34 @@
-<h2 style="margin-top: 70px;"> My Reviews </h2>
+<div class="container one-resto">
 
-<ul>
-  <p><% restaurantsAndStuff.forEach((oneResto) => { %></p>
+<h2 class="move" style="margin-top: 70px;"> <%= restaurants.name %> </h2>
+
+<ul
     <div class="container" style="float: left; width: 75%;">
     <li class="box">
-      <h3 class="move"><%= oneResto.name %></h3>
-      <img src="<%= oneResto.image_url %>" >
-      <!-- <p>Restaurant Name: <i><%= oneResto.restaurantName %></i></p> -->
-      <p class="move">Cuisine: <i><%= oneResto.address %></i></p>
-      <p class="move">Rating: <i><%= oneResto.city %></i></p>
-      <p class="move">Comments: <i><%= oneResto.state %></i></p>
-      <p class="move">Comments: <i><%= oneResto.country %></i></p>
-      <p class="move">Comments: <i><%= oneResto.phone %></i></p>
-      <p class="move">Comments: <i><%= oneResto.price %></i></p>
-      <p class="move">Comments: <i><%= oneResto.reserve_url %></i></p>
+      <img style="margin-top: 50px; margin-right: 20px;" src="<%= restaurants.image_url %>" >
+      <!-- <p>Restaurant Name: <i><%= restaurants.restaurantName %></i></p> -->
+      <p class="move">Address: <i><%= restaurants.address %></i></p>
+      <p class="move">City: <i><%= restaurants.city %></i></p>
+      <p class="move">State: <i><%= restaurants.state %></i></p>
+      <p class="move">Country: <i><%= restaurants.country %></i></p>
+      <p class="move">Phone #: <i><%= restaurants.phone %></i></p>
+      <% if (restaurants.price === 1) { %>
+        <p class="move">Price: <i> $ </i></p>
+      <% } else if (restaurants.price === 2) { %>
+        <p class="move">Price: <i> $$ </i></p>
+      <% } else if (restaurants.price === 3) { %>
+        <p class="move">Price: <i> $$$ </i></p>
+      <% } else if (restaurants.price === 4) { %>
+        <p class="move">Price: <i> $$$$ </i></p>
+      <% } %>
 
-      <a href="<%= oneResto._id %>/delete" style="position: relative">
+      <p class="move"><i><a href="<%= restaurants.reserve_url %>">Reserve NOW On Open Table</a></i></p>
+
+      <a href="<%= restaurants._id %>/delete" style="position: relative">
         Delete This Review
       </a>
     </li>
   </div>
-  <% }) %>
 </ul>
+
+</div>

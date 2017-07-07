@@ -13,6 +13,8 @@ const myRestaurantSchema = new Schema(
   price: {type: Number, min: 1, max: 4},
   reserve_url: {type: String},
   image_url: {type: String},
+  owner: { type: Schema.Types.ObjectId }
+
 }
 
 );

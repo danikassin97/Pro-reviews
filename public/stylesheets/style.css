@@ -192,6 +192,15 @@ img {
   padding-top: 10px;
 }
 
+.header {
+ font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+ font-weight: 500;
+ font-size: 70px;
+ text-align:center;
+ margin:auto;
+ /*width: 500px;*/
+}
+
 /*.band {
   width: 1600px;
   margin-top: 30px;
@@ -201,10 +210,10 @@ img {
   opacity: 0.5;
 }*/
 
-.top-pic {
-  width: 1600px;
+/*.top-pic {
+  width: 1600px;*/
   /*background-image: url("/images/eating.png");*/
-  background-size: cover;
+  /*background-size: cover;
   text-align: center;
   margin-left: -150px;
   height: 300px;
@@ -212,18 +221,42 @@ img {
   position: relative;
   bottom: 50px;
 
-}
+}*/
 
 .home-writing {
   position: relative;
-  top: 100px;
-  right: 300px;
+  bottom: 100px;
+  color: black;
+  /*right: 300px;*/
   font-size: 50px;
 }
 
 .box {
-  background-color: lightgray;
-  height: 350px;
+  height: 450px;
+  background-color: rgba(216, 216, 216, 0.7);
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.one-resto {
+  background-image: url("images/foodbackground.png");
+  background-color: red
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.nice-title {
+  /*height: 100px;
+  width: 600px;
+  background-color: white;
+  text-align: center;
+  position: relative;*/
+  position: relative;
+  left: 80px;
 }
 
 /**/
@@ -260,6 +293,8 @@ h1 { font-size: 1.5em; margin: 10px; }
   color: #ddd;
  float: right;
 }
+
+
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
@@ -357,6 +392,7 @@ select{
     color:red;
 }
 </style>
+
 
 
 Contact GitHub API Training Shop Blog About

@@ -1,0 +1,33 @@
+<h1>Here Are All Restaurants In Miami</h1>
+
+<div class="container one-resto">
+
+  <% restaurants.forEach((oneResto) => { %>
+
+<ul>
+    <div class="container" style="float: left; width: 75%;">
+    <li class="box">
+      <h2 class="move" style="margin-top: 30px;"> <%=  oneResto.name %> </h2>
+      <img style="margin-right: 20px;" src="<%=  oneResto.image_url %>" >
+      <p class="move">Address: <i><%=  oneResto.address %></i></p>
+      <p class="move">City: <i><%=  oneResto.city %></i></p>
+      <p class="move">State: <i><%=  oneResto.state %></i></p>
+      <p class="move">Country: <i><%=  oneResto.country %></i></p>
+      <p class="move">Phone #: <i><%=  oneResto.phone %></i></p>
+      <% if (restaurants.price === 1) { %>
+        <p class="move">Price: <i> $ </i></p>
+      <% } else if (restaurants.price === 2) { %>
+        <p class="move">Price: <i> $$ </i></p>
+      <% } else if (restaurants.price === 3) { %>
+        <p class="move">Price: <i> $$$ </i></p>
+      <% } else if (restaurants.price === 4) { %>
+        <p class="move">Price: <i> $$$$ </i></p>
+      <% } %>      <p class="move"><i><a href="<%=  oneResto.reserve_url %>">Reserve NOW On Open Table</a></i></p>
+
+
+    </li>
+  </div>
+</ul>
+<% }); %>
+
+</div>

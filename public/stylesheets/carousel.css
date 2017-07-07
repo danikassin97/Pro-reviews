@@ -60,6 +60,9 @@ body {
   height: 500px;
 }
 
+.carousel-inner {
+  height: 780px;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */

@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="/stylesheets/carousel.css">
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 1600px; position: relative; right: 300px; bottom: 50px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -22,32 +22,34 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img class="first-slide" src="/images/food1.png" alt="First slide">
+      <img class="first-slide" src="/images/food1.png" alt="First slide" style="height: 1000px;">
       <div class="container">
         <div class="carousel-caption">
-          <h1 class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+          <h1 class="top-pic"><p class="home-writing nice-title header">Welcome to <%= title %> </p><h1>
         </div>
       </div>
     </div>
     <div class="item">
-      <img class="second-slide" src="/images/food2.png" alt="Second slide">
+      <img class="second-slide" src="/images/food2.png" alt="Second slide" style="height: 1000px;">
       <div class="container">
         <div class="carousel-caption">
-          <h1 style="padding-top: 50px;" class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+          <h1 class="top-pic"><p class="home-writing nice-title header">Welcome to <%= title %> </p><h1>
         </div>
       </div>
     </div>
     <div class="item">
-      <img class="third-slide" src="/images/food3.png" alt="Third slide">
+      <img class="third-slide" src="/images/food3.png" alt="Third slide" style="height: 1000px;">
       <div class="container">
         <div class="carousel-caption">
-          <h1 class="top-pic"><p class="home-writing">Welcome to <%= title %> </p><h1>
+          <h1 class="top-pic"><p class="home-writing nice-title header">Welcome to <%= title %> </p><h1>
       </div>
     </div>
   </div>
 </div>
 </div>
 </div>
+
+<div style="margin-top: 200px;">
 
 <% if (typeof currentUser === 'object') { %>
 
@@ -56,88 +58,121 @@
 <div style="margin-bottom: 60px; margin-left: 150px;">
   <h3> Hello, <%= currentUser.username %>. </h3>
   <h2>Here Are Some Restaurants Near You!</h2>
+
+  <hr style="border: 1px solid;
+ border-color: black; width: 1100px; position: relative; right: 95px;">
 </div>
 
 <div class="container marketing">
 
      <!-- Three columns of text below the carousel -->
      <div class="row">
-       <% restaurants.forEach((result) => { %>
-         <% if (result.city === "Miami") { %>
-           <div class="col-lg-4">
-             <img class="img-circle" src="<%= result.image_url %>" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-             <h2><%= result.name %></h2>
-             <p><%= result.address %></p>
-             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       <% restaurants.forEach((oneResto) => { %>
+         <% if (oneResto.city === "Miami") { %>
+           <div class="col-lg-4" style="margin-top: 20px">
+             <img class="img-circle" src="<%= oneResto.image_url %>" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2 style="margin-top: 300px"><%= oneResto.name %></h2>
+             <p><%= oneResto.address %></p>
+             <p><%= oneResto.city %></p>
+             <% if (restaurants.price === 1) { %>
+               <p class="move">Price: <i> $ </i></p>
+             <% } else if (restaurants.price === 2) { %>
+               <p class="move">Price: <i> $$ </i></p>
+             <% } else if (restaurants.price === 3) { %>
+               <p class="move">Price: <i> $$$ </i></p>
+             <% } else if (restaurants.price === 4) { %>
+               <p class="move">Price: <i> $$$$ </i></p>
+             <% } %>
+
+             <p><a class="btn btn-default" href="/restaurants/<%= oneResto._id %>" role="button">View details &raquo;</a></p>
            </div><!-- /.col-lg-4 -->
          <% } %>
        <% }); %>
      </div><!-- /.row -->
 </div>
 
-<% } else if (typeof currentUser.city === "New York"){ %>
+<% } else if ( currentUser.city === "New York"){ %>
 
+<div style="margin-bottom: 60px; margin-left: 150px;">
   <h3> Hello, <%= currentUser.username %>. </h3>
   <h2>Here Are Some Restaurants Near You!</h2>
 
-    <div class="container marketing">
+  <hr style="border: 1px solid;
+ border-color: black; width: 1100px; position: relative; right: 95px;">
+</div>
 
-         <!-- Three columns of text below the carousel -->
-         <div class="row">
-           <div class="col-lg-4">
-             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-             <h2>Heading</h2>
-             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+<div class="container marketing">
+
+     <!-- Three columns of text below the carousel -->
+     <div class="row">
+       <% restaurants.forEach((oneResto) => { %>
+         <% if (oneResto.city === "New York") { %>
+           <div class="col-lg-4" style="margin-top: 20px">
+             <img class="img-circle" src="<%= oneResto.image_url %>" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+             <h2 style="margin-top: 300px"><%= oneResto.name %></h2>
+             <p><%= oneResto.address %></p>
+             <p><%= oneResto.city %></p>
+             <% if (restaurants.price === 1) { %>
+               <p class="move">Price: <i> $ </i></p>
+             <% } else if (restaurants.price === 2) { %>
+               <p class="move">Price: <i> $$ </i></p>
+             <% } else if (restaurants.price === 3) { %>
+               <p class="move">Price: <i> $$$ </i></p>
+             <% } else if (restaurants.price === 4) { %>
+               <p class="move">Price: <i> $$$$ </i></p>
+             <% } %>
+
+             <p><a class="btn btn-default" href="/restaurants/<%= oneResto._id %>" role="button">View details &raquo;</a></p>
            </div><!-- /.col-lg-4 -->
-           <div class="col-lg-4">
-             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-             <h2>Heading</h2>
-             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-           </div><!-- /.col-lg-4 -->
-           <div class="col-lg-4">
-             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-             <h2>Heading</h2>
-             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-           </div><!-- /.col-lg-4 -->
-         </div><!-- /.row -->
-    </div>
+         <% } %>
+       <% }); %>
+     </div><!-- /.row -->
+</div>
+
 
     <% } %>
 
     <% } else { %>
 
+      <div style="margin-bottom: 60px; margin-left: 150px;">
+
       <h2>Here Are Some Restaurants For You!</h2>
+
+      <hr style="border: 1px solid;
+     border-color: black; width: 1100px; position: relative; right: 95px;">
+
+    </div>
 
       <div class="container marketing">
 
            <!-- Three columns of text below the carousel -->
            <div class="row">
-             <div class="col-lg-4">
-               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-               <h2>Heading</h2>
-               <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-             </div><!-- /.col-lg-4 -->
-             <div class="col-lg-4">
-               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-               <h2>Heading</h2>
-               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-             </div><!-- /.col-lg-4 -->
-             <div class="col-lg-4">
-               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
-               <h2>Heading</h2>
-               <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-             </div><!-- /.col-lg-4 -->
+             <% restaurants.forEach((oneResto) => { %>
+               <% if (oneResto.city === "Miami" || oneResto.city === "New York") { %>
+                 <div class="col-lg-4" style="margin-top: 20px">
+                   <img class="img-circle" src="<%= oneResto.image_url %>" alt="Generic placeholder image" width="140" height="140" style="position: relative; right: 20px;">
+                   <h2 style="margin-top: 300px"><%= oneResto.name %></h2>
+                   <p><%= oneResto.address %></p>
+                   <p><%= oneResto.city %></p>
+                   <% if (restaurants.price === 1) { %>
+                     <p class="move">Price: <i> $ </i></p>
+                   <% } else if (restaurants.price === 2) { %>
+                     <p class="move">Price: <i> $$ </i></p>
+                   <% } else if (restaurants.price === 3) { %>
+                     <p class="move">Price: <i> $$$ </i></p>
+                   <% } else if (restaurants.price === 4) { %>
+                     <p class="move">Price: <i> $$$$ </i></p>
+                   <% } %>
+
+                   <p><a class="btn btn-default" href="/restaurants/<%= oneResto._id %>" role="button">View details &raquo;</a></p>
+                 </div><!-- /.col-lg-4 -->
+               <% } %>
+             <% }); %>
            </div><!-- /.row -->
       </div>
 
     <% } %>
-
+</div>
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

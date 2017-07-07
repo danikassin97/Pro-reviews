@@ -1,0 +1,228 @@
+<h2 style="margin-top: 70px;"> Add a Restaurant Now!</h2>
+
+<form method="post" action="/restaurants" enctype="multipart/form-data">
+
+  <div class="container" style="height: 100%">
+
+<fieldset>
+
+<!-- Form Name -->
+<br>
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="name-input" class="control-label">Name</label>
+  <div class="  inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  id="name-input" name="restaurantName" placeholder="Restaurant Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="phone-input" class="control-label">Phone #</label>
+    <div class="inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input id="phone-input" name="restaurantPhone" placeholder="Restaurant Phone #" class="form-control" type="number">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="address-input" class="control-label">Address</label>
+    <div class="inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="address-input" name="restaurantAddress" placeholder="Restaurant Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="city-input" class="  control-label">City</label>
+    <div class="  inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="city-input" name="restaurantCity" placeholder="Restaurant City" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+
+<div class="form-group">
+  <label for="state-input" class="  control-label">State</label>
+    <div class="selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select id="state-input" name="restaurantState" class="form-control selectpicker" >
+      <option value=" " >Please select your state</option>
+      <option>Alabama</option>
+      <option>Alaska</option>
+      <option >Arizona</option>
+      <option >Arkansas</option>
+      <option >California</option>
+      <option >Colorado</option>
+      <option >Connecticut</option>
+      <option >Delaware</option>
+      <option >District of Columbia</option>
+      <option> Florida</option>
+      <option >Georgia</option>
+      <option >Hawaii</option>
+      <option >Idaho</option>
+      <option >Illinois</option>
+      <option >Indiana</option>
+      <option >Iowa</option>
+      <option> Kansas</option>
+      <option >Kentucky</option>
+      <option >Louisiana</option>
+      <option>Maine</option>
+      <option >Maryland</option>
+      <option> Mass</option>
+      <option >Michigan</option>
+      <option >Minnesota</option>
+      <option>Mississippi</option>
+      <option>Missouri</option>
+      <option>Montana</option>
+      <option>Nebraska</option>
+      <option>Nevada</option>
+      <option>New Hampshire</option>
+      <option>New Jersey</option>
+      <option>New Mexico</option>
+      <option>New York</option>
+      <option>North Carolina</option>
+      <option>North Dakota</option>
+      <option>Ohio</option>
+      <option>Oklahoma</option>
+      <option>Oregon</option>
+      <option>Pennsylvania</option>
+      <option>Rhode Island</option>
+      <option>South Carolina</option>
+      <option>South Dakota</option>
+      <option>Tennessee</option>
+      <option>Texas</option>
+      <option> Uttah</option>
+      <option>Vermont</option>
+      <option>Virginia</option>
+      <option >Washington</option>
+      <option >West Virginia</option>
+      <option>Wisconsin</option>
+      <option >Wyoming</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <label for="country-input" class="  control-label">Country</label>
+    <div class="  inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="country-input" name="restaurantCountry" placeholder="Restaurant Country" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label for="price-input" class="  control-label">Price 1-4</label>
+   <div class="  inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input id="price-input" name="restaurantPrice" placeholder="Restaurant Price" class="form-control" type="number">
+    </div>
+  </div>
+</div>
+
+<!-- Text area -->
+
+<div class="form-group">
+  <label for="reservation-input" class="  control-label">Reservation URL</label>
+   <div class="  inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input id="reservation-input" name="restaurantReservation" placeholder="Restaurant Reservation URL" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="image-input" class="  control-label">Image URL</label>
+   <div class="inputGroupContainer">
+    <!-- <div class="input-group"> -->
+        <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span> -->
+  <input id="image-input" name="restaurantImage" placeholder="Restaurant Image URL" class="form-control" type="file">
+    </div>
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="control-label"></label>
+  <div>
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    <!-- /.container -->
+  <!-- <label for="restaurant-name-input">Restaurant Name</label>
+  <input id="restaurant-name-input" type="text" name="restaurantName">
+  <br>
+  <br>
+
+  <label for="restaurant-comments-input">Comments</label>
+  <textarea id="restaurant-comments-input" type="text" name="restaurantComments"></textarea>
+  <br>
+  <br> -->
+
+  <!-- <label for="restaurant-cuisine-input">Cuisine</label>
+  <input id="restaurant-cuisine-input" type="text" name="restaurantCuisine"> -->
+  <!-- <label>
+    <span>Cuisine :  </span><select name="restaurantCuisine">
+      <option>Mexican</option>
+      <option>Indonesian</option>
+      <option>Chinese</option>
+      <option>Italian</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>Japanese</option>
+      <option>Turkish</option>
+      <option>Indian</option>
+      <option>Thai</option>
+    </select>
+  </label>
+  <br>
+  <br>
+
+
+  <label for="restaurant-rating-input">Rating</label> -->
+  <!-- <input id="restaurant-rating-input" type="number" name="restaurantRating"> -->
+
+  <!-- <fieldset class="rating">
+    <input type="radio" id="star5" name="restaurantRating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars" name="restaurantRating"></label>
+    <input type="radio" id="star4" name="restaurantRating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars" name="restaurantRating"></label>
+    <input type="radio" id="star3" name="restaurantRating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars" name="restaurantRating"></label>
+    <input type="radio" id="star2" name="restaurantRating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars" name="restaurantRating"></label>
+    <input type="radio" id="star1" name="restaurantRating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star" name="restaurantRating"></label>
+  </fieldset>
+  <br>
+  <br>
+
+  <label for="restaurant-photo-url"> Photo Upload </label>
+  <input  id="restaurant-photo-url" type="file" name="restaurantPhoto">
+  <br>
+  <br>
+
+  <button type="submit"> Save This Review </button> -->
+</form>

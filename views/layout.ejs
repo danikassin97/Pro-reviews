@@ -20,18 +20,33 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="/">Pro Reviews</a>
+       <h1 style="position: relative; bottom: 18px; right: 130px;"><a class="navbar-brand" href="/">RestoFinder</a></h1>
      </div>
      <div id="navbar" class="collapse navbar-collapse">
        <ul class="nav navbar-nav">
-         <li><a href="/"> Home </a></li>
+         <form name= "yes" method="get">
+         <div class="form-group">
+           <label for="city-input"></label>
+             <div style="width: 600px; position: relative; bottom: 10px; right: 130px;">
+             <div class="input-group">
+             <select style="width: 400px;" id="city-input" class="form-control selectpicker" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
+               <option value=" " >Please select your city</option>
+               <option value="/restaurants/miami">Miami</option>
+               <option value="/restaurants/newyork">New York</option>
+             </select>
+           </div>
+         </div>
+         </div>
+       </form>
+
+
        </ul>
           <ul class="nav navbar-nav navbar-right" >
          <% if (typeof currentUser === 'object') { %>
              <!-- If we got the logged in user variable -->
-             <li><a href="/reviews/my-reviews"> Your Reviews </a></li>
+             <li><a href="/restaurants/my-restaurants"> Your Restaurants </a></li>
              <!-- <br> -->
-             <li><a href="/reviews/new"> Add a Restaurant Review </a></li>
+             <li><a href="/restaurants/new"> Add a Restaurant Review </a></li>
              <!-- <br> -->
              <li><a href="/logout"> Log Out </a></li>
              <!-- <br> -->
@@ -66,14 +81,14 @@
         </div></.sidebar-offcanvas-->
     <!-- <div class="container"> -->
     <%- body %>
+  </div>
     <!-- </div> -->
     <footer>
-      <div>
+      <!-- <div> -->
         <!-- <img class="band" src="/images/background.png"> -->
-      </div>
+      <!-- </div> -->
     </footer>
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</div>
   </body>
 </html>
